@@ -20,4 +20,9 @@ public class Pair {
     protected List<String> getCrewNames() {
         return crewNames;
     }
+
+    @Override
+    public String toString() {
+        return String.join(" : ", crewNames);
+    }
 }

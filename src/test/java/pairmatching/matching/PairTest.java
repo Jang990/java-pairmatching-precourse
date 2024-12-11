@@ -30,6 +30,11 @@ class PairTest {
                 .countDuplicatedCrew(pair(List.of("AAA", "BBB", "CCC"))), 2);
     }
 
+    @Test
+    void 크루원_출력() {
+        assertEquals("AAA : BBB", pair(List.of("AAA", "BBB")).toString());
+    }
+
     private static Pair pair(List<String> names) {
         return new Pair(names);
     }
