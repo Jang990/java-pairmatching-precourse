@@ -4,12 +4,15 @@ import pairmatching.io.common.InputReader;
 
 public class FunctionSelectionReader {
     private final InputReader reader;
+    private final FunctionSelectionUiGetter uiGetter;
 
-    public FunctionSelectionReader(InputReader reader) {
+    public FunctionSelectionReader(InputReader reader, FunctionSelectionUiGetter uiGetter) {
         this.reader = reader;
+        this.uiGetter = uiGetter;
     }
 
     public MainFunction read() {
+        System.out.println(uiGetter.get());
         return findFunction(reader.readLine());
     }
 
