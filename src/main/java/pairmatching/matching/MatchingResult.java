@@ -20,4 +20,9 @@ public class MatchingResult {
     public List<Pair> getPairs() {
         return pairs;
     }
+
+    public boolean hasPair(Pair pair) {
+        return pairs.stream()
+                .anyMatch(p -> p.countDuplicatedCrew(pair) >= 2);
+    }
 }
