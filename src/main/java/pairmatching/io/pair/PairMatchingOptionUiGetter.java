@@ -1,4 +1,8 @@
-package pairmatching.options;
+package pairmatching.io.pair;
+
+import pairmatching.options.Course;
+import pairmatching.options.Level;
+import pairmatching.options.Mission;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +14,6 @@ public class PairMatchingOptionUiGetter {
     public String get() {
         StringBuilder sb = new StringBuilder();
         sb.append(LINE).append("\n");
-        System.out.println(createCourseUi().equals("과정: 백엔드 | 프론트엔드\n"));
         sb.append(createCourseUi());
         sb.append(createMissionUi());
         sb.append(LINE).append("\n");

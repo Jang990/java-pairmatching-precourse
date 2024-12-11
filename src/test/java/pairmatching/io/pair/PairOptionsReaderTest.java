@@ -13,7 +13,7 @@ class PairOptionsReaderTest {
     @Test
     void 페어와_관련된_입력을_읽어온다() {
         InputReaderStub commonReaderStub = new InputReaderStub("프론트엔드, 레벨1, 자동차경주");
-        PairOptionsReader reader = new PairOptionsReader(commonReaderStub);
+        PairOptionsReader reader = new PairOptionsReader(commonReaderStub, new PairMatchingOptionUiGetter());
 
         PairOptions result = reader.read();
 
@@ -25,7 +25,7 @@ class PairOptionsReaderTest {
     @Test
     void 잘못된_입력이_들어오면_예외가_발생한다() {
         InputReaderStub commonReaderStub = new InputReaderStub();
-        PairOptionsReader reader = new PairOptionsReader(commonReaderStub);
+        PairOptionsReader reader = new PairOptionsReader(commonReaderStub, new PairMatchingOptionUiGetter());
 
         commonReaderStub.setTestValue("ABC, 레벨1, 자동차경주");
         assertThrows(IllegalArgumentException.class, reader::read);

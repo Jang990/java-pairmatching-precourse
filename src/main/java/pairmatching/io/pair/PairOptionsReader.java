@@ -18,12 +18,15 @@ public class PairOptionsReader {
     private static final String MISSION_INPUT_ERROR = "잘못된 미션 입력입니다.";
 
     private final InputReader inputReader;
+    private final PairMatchingOptionUiGetter uiGetter;
 
-    public PairOptionsReader(InputReader inputReader) {
+    public PairOptionsReader(InputReader inputReader, PairMatchingOptionUiGetter uiGetter) {
         this.inputReader = inputReader;
+        this.uiGetter = uiGetter;
     }
 
     public PairOptions read() {
+        System.out.println(uiGetter.get());
         String[] options = inputReader.readLine().split(DELIMITER);
         return new PairOptions(
                 parseCourse(options[COURSE_IDX]),
