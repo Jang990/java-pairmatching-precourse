@@ -10,12 +10,13 @@ public class PairMatchingOptionUiGetter {
     public String get() {
         StringBuilder sb = new StringBuilder();
         sb.append(LINE).append("\n");
+        System.out.println(createCourseUi().equals("과정: 백엔드 | 프론트엔드\n"));
         sb.append(createCourseUi());
         sb.append(createMissionUi());
         sb.append(LINE).append("\n");
-        sb.append("과정, 레벨, 미션을 선택하세요.").append("\n");
+        sb.append("과정, 레벨, 미션을 선택하세요.\n")
+                .append("ex) 백엔드, 레벨1, 자동차경주\n");
 
-        System.out.println(sb.toString());
         return sb.toString();
     }
 
